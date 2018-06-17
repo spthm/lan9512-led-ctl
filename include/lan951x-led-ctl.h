@@ -21,12 +21,19 @@
 #define LAN951X_VENDOR_ID (0x0424)
 #define LAN951X_PRODUCT_ID (0xec00)
 
-/* values taken from kernel driver smsc95xx.h */
+/* Values taken from LAN9512_LAN9512i Databook Rev. 1.2 (03-01-12).pdf
+ * See (accessed 2018-06-17):
+ * http://www.microchip.com/SWLibraryWeb/product.aspx?product=MAN-LAN95xx-DAT
+ *
+ * See also kernel driver smsc95xx.h
+ */
 #define USB_VENDOR_REQUEST_WR_REG (0xa0) // Table 3.67
 #define USB_VENDOR_REQUEST_RD_REG (0xa1) // Table 3.69
 #define LED_GPIO_CFG (0x24) // Section 4.3.9
 
-/* meaning of the bits in the LED_GPIO_CFG register */
+/* Meaning of the bits in the LED_GPIO_CFG register.
+ * Section 4.3.9
+ */
 #define GPDAT0 (1 << 0)
 #define GPDAT1 (1 << 1)
 #define GPDAT2 (1 << 2)
