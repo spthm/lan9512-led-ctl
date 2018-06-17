@@ -1,3 +1,5 @@
+INSTALL_DIR = /opt/bin
+
 ECHO	= /bin/echo -e
 SHELL	= /bin/sh
 RM	= /bin/rm -f
@@ -21,9 +23,9 @@ tidy:
 	$(RM) src/*.o $(PROGS)
 
 install: $(PROGS)
-	@$(ECHO) "\t==> Installing programs to $(DESTDIR)/usr/bin"
-	@install -m 0755 -d $(DESTDIR)/usr/bin
-	@install -m 0755 -t $(DESTDIR)/usr/bin $(PROGS)
+	@$(ECHO) "\t==> Installing programs to $(INSTALL_DIR)"
+	@install -m 0755 -d $(INSTALL_DIR)
+	@install -m 0755 -t $(INSTALL_DIR) $(PROGS)
 
 pack:
 	@$(ECHO) "Cleaning up ..." ; \
